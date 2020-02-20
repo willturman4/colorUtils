@@ -3,7 +3,7 @@
   NUID: 05032615
   Date: 2/11/2020
   Description of the program: Function of time diliatio
-  
+
 */
 
 #include <stdlib.h>
@@ -99,7 +99,7 @@ static void testRgbToCmykOutOfBounds(void **state) {
 
 /**
  * This function tests rgbToCMYK passing a single, hard-coded
- * rgb-value (Steele Blue, 70, 130, 180).  
+ * rgb-value (Steele Blue, 70, 130, 180).
  */
 static void testRgbToCmyk001(void **state) {
   double c, m, y, k;
@@ -223,14 +223,15 @@ int main(int argc, char **argv) {
     double instagramPink[] =    {194,  43, 163,    0, 0.78, 0.16, 0.24};
     double powerpointOrange[] = {209,  69,  36,    0, 0.67, 0.83, 0.18};
     double spotifyGreen[] =     { 30, 214,  96, 0.86,    0, 0.55, 0.16};
+    /*
 	double color1[] =     { 40, 200,  95, 0.86,    0, 0.55, 0.16};
 	double color2[] =     { 35, 195,  94, 0.86,    0, 0.55, 0.16};
 	double color3[] =     { 30, 190,  93, 0.86,    0, 0.55, 0.16};
 	double color4[] =     { 25, 185,  92, 0.86,    0, 0.55, 0.16};
 	double color5[] =     { 20, 180,  91, 0.86,    0, 0.55, 0.16};
 	double color6[] =     { 15, 175,  90, 0.86,    0, 0.55, 0.16};
-	
-	
+
+*/
 
     const struct CMUnitTest tests[] = {
             cmocka_unit_test(testRandomCyclicalEquality),
@@ -251,12 +252,14 @@ int main(int argc, char **argv) {
             cmocka_unit_test_prestate(testBidirectionalValues, &instagramPink),
             cmocka_unit_test_prestate(testBidirectionalValues, &powerpointOrange),
             cmocka_unit_test_prestate(testBidirectionalValues, &spotifyGreen),
-			cmocka_unit_test_prestate(testBidirectionalValues, &color1),
+			/*
+      cmocka_unit_test_prestate(testBidirectionalValues, &color1),
 			cmocka_unit_test_prestate(testBidirectionalValues, &color2),
 			cmocka_unit_test_prestate(testBidirectionalValues, &color3),
 			cmocka_unit_test_prestate(testBidirectionalValues, &color4),
 			cmocka_unit_test_prestate(testBidirectionalValues, &color5),
-			cmocka_unit_test_prestate(testBidirectionalValues, &color5),
+			cmocka_unit_test_prestate(testBidirectionalValues, &color6),
+      */
   };
 
   return cmocka_run_group_tests(tests, NULL, NULL);
